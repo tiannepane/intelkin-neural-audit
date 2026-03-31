@@ -1,37 +1,25 @@
-import { useState } from "react";
-
 const channels = [
-  { id: "video", label: "VIDEO", activeClass: "bg-neural-blue text-primary-foreground" },
-  { id: "audio", label: "AUDIO", activeClass: "bg-neural-green text-primary-foreground" },
-  { id: "text", label: "TEXT", activeClass: "bg-neural-purple text-primary-foreground" },
+  { id: "video", label: "VIDEO" },
+  { id: "audio", label: "AUDIO" },
+  { id: "text", label: "TEXT" },
 ] as const;
 
-const ChannelToggles = () => {
-  const [active, setActive] = useState<Set<string>>(new Set(["video"]));
-
-  const toggle = (id: string) => {
-    setActive((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  };
+const ChannelToggles = ({ detected = [] }: { detected?: string[] }) => {
+  const activeSet = new Set(detected);
 
   return (
     <div className="flex gap-2">
       {channels.map((ch) => (
-        <button
+        <span
           key={ch.id}
-          onClick={() => toggle(ch.id)}
-          className={`px-3 py-1 rounded-full text-xs font-mono font-medium transition-colors ${
-            active.has(ch.id)
-              ? ch.activeClass
-              : "bg-muted text-muted-foreground hover:text-foreground"
+          className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
+            activeSet.has(ch.id)
+              ? "bg-foreground/15 text-foreground"
+              : "bg-muted text-muted-foreground/50"
           }`}
         >
           {ch.label}
-        </button>
+        </span>
       ))}
     </div>
   );
