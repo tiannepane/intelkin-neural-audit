@@ -1,9 +1,13 @@
 import { Upload } from "lucide-react";
 
-const UploadDropzone = ({ label }: { label: string }) => (
-  <div className="border border-dashed border-border rounded-none p-6 flex flex-col items-center justify-center gap-2 bg-card hover:border-muted-foreground/30 transition-colors cursor-pointer">
-    <Upload className="w-5 h-5 text-muted-foreground" />
-    <span className="text-muted-foreground text-xs font-mono">{label}</span>
+const UploadDropzone = () => (
+  <div className="border-2 border-dashed border-muted-foreground/30 rounded-none p-8 flex flex-col items-center justify-center gap-3 bg-card hover:border-muted-foreground/50 transition-colors cursor-pointer">
+    <Upload className="w-7 h-7 text-muted-foreground" />
+    <div className="text-center">
+      <span className="text-sm text-foreground font-medium block">Drag & drop your file here</span>
+      <span className="text-sm text-muted-foreground">or click to browse</span>
+    </div>
+    <span className="text-xs text-muted-foreground/60 font-mono">MP4, MOV, AVI, MP3, WAV, TXT</span>
   </div>
 );
 
