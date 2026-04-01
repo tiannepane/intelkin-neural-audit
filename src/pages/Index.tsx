@@ -6,11 +6,11 @@ import AnalysisScreen from "@/components/AnalysisScreen";
 type Page = "intro" | "upload" | "loading" | "analysis";
 
 const LoadingScreen = () => (
-  <div className="h-screen flex items-center justify-center bg-black">
+  <div className="h-screen flex items-center justify-center" style={{ background: "#060606" }}>
     <div className="flex flex-col items-center gap-5 page-fade-enter">
       <div className="flex items-center gap-3">
-        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-        <span className="text-lg font-mono" style={{ color: "#E8A04A" }}>
+        <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#4A8FE8" }} />
+        <span className="text-lg font-mono" style={{ color: "#4A8FE8" }}>
           Initializing TRIBE v2 scan...
         </span>
       </div>

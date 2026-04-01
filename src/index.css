@@ -82,7 +82,7 @@
   border-radius: 2px;
 }
 
-/* Glass card — shared surface style for Page 3 */
+/* Glass card, shared surface style for Page 3 */
 .glass-card {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);

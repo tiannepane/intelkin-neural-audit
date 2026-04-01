@@ -10,7 +10,7 @@ const frames = Array.from({ length: FRAME_COUNT }, (_, i) => ({
 const fmt = (s: number) =>
   `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 
-/* Cycling 5-color palette — timeline thumbnails only */
+/* Cycling 5-color palette , timeline thumbnails only */
 const PALETTE = ["#8B5CF6", "#06B6D4", "#EF4444", "#F97316", "#4A8FE8"];
 
 const TimelineScrubber = ({ mode }: { mode: ViewMode }) => {

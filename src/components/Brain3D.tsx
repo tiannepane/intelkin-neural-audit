@@ -193,7 +193,7 @@ function BrainScene({
     if (groupRef.current)
       groupRef.current.position.y = Math.sin(clock.elapsedTime * 0.5) * 0.012;
 
-    // Lerp boost toward target — delta * 5 gives ~200ms rise time
+    // Lerp boost toward target: delta * 5 gives ~200ms rise time
     const lerpFactor = Math.min(1, delta * 5);
     REGION_NAMES.forEach((name, i) => {
       const target = hoveredRegionRef.current === name ? 0.3 : 0;

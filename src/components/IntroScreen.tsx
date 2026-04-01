@@ -38,7 +38,7 @@ const ANNOTATIONS = [
   {
     pct:         "−36%",
     label:       "visual hierarchy",
-    explanation: "Users couldn't locate the next action fast enough — visual search overhead predicted drop-off.",
+    explanation: "Users couldn't locate the next action fast enough. Visual search overhead predicted drop-off.",
     topVh:       32,
     left:        `calc(50% + ${(WIDTHS[1] / 2 * ANN_VH_SCALE).toFixed(2)}vh)`,
   },
@@ -58,7 +58,7 @@ const ANNOTATIONS = [
   },
 ];
 
-/* ── Particle animation — 25% speed, 400ms waist pause, particle-triggered annotations ── */
+/* ── Particle animation , 25% speed, 400ms waist pause, particle-triggered annotations ── */
 function useParticles(
   canvasRef: React.RefObject<HTMLCanvasElement | null>,
   onWaistTriggered: (waistIndex: number) => void,
@@ -98,7 +98,7 @@ function useParticles(
     let holdDrawn = false;
     let raf: number;
 
-    // Triggered once, never reset — persists for the lifetime of this effect closure
+    // Triggered once, never reset , persists for the lifetime of this effect closure
     const waistTriggered = [false, false, false];
 
     function tick() {
@@ -112,7 +112,7 @@ function useParticles(
         anyAlive = true;
 
         if (p.pauseFrames > 0) {
-          // Holding at waist — just decrement and draw in place
+          // Holding at waist , just decrement and draw in place
           p.pauseFrames--;
         } else if (p.off) {
           // Ejecting sideways after waist drop
@@ -274,7 +274,7 @@ function CopyStack({ onNext }: { onNext: () => void }) {
         animationDelay: "1.1s",
       }}>
         Built on{" "}
-        {/* Anchor span — tooltip positioned relative to this */}
+        {/* Anchor span , tooltip positioned relative to this */}
         <span
           style={{ position: "relative", display: "inline-block" }}
           onMouseEnter={() => setTribeHovered(true)}
@@ -319,7 +319,7 @@ function CopyStack({ onNext }: { onNext: () => void }) {
                 fontSize: 13, color: "#777777", lineHeight: 1.6, margin: 0,
               }}>
                 Meta FAIR's open-source neural baseline dataset. 752 brain scans
-                across diverse demographics — the research foundation for
+                across diverse demographics, the research foundation for
                 subconscious response mapping.
               </p>
             </div>
@@ -361,7 +361,7 @@ function CopyStack({ onNext }: { onNext: () => void }) {
             transition: "border-color 500ms ease, transform 100ms ease",
           }}
         >
-          {/* Label — fades out on hover */}
+          {/* Label , fades out on hover */}
           <span style={{
             opacity: btnHovered ? 0 : 1,
             transition: "opacity 500ms ease",
@@ -370,7 +370,7 @@ function CopyStack({ onNext }: { onNext: () => void }) {
             START A NEURAL AUDIT
           </span>
 
-          {/* Chevron pill — expands on hover */}
+          {/* Chevron pill , expands on hover */}
           <div style={{
             position: "absolute",
             right: 4,
@@ -410,20 +410,20 @@ export default function IntroScreen({ onNext }: { onNext: () => void }) {
       background: "#000000",
     }}>
 
-      {/* Fixed top bar — transparent, z-index 100 */}
+      {/* Fixed top bar */}
       <div style={{
         position: "fixed", top: 0, left: 0, right: 0,
         height: 48, zIndex: 100,
         display: "flex", alignItems: "center",
-        padding: "0 32px",
+        padding: "0 20px",
         background: "transparent",
       }}>
-        <span style={{ color: "#ffffff", fontSize: 14, fontFamily: "monospace" }}>
+        <span style={{ color: "#FFFFFF", fontSize: 15, fontWeight: 600, fontFamily: "sans-serif", letterSpacing: "-0.01em" }}>
           Intelkin
         </span>
       </div>
 
-      {/* Column 1 — 55%, funnel */}
+      {/* Column 1 , 55%, funnel */}
       <div style={{
         width: "55%",
         height: "100vh",
@@ -443,7 +443,7 @@ export default function IntroScreen({ onNext }: { onNext: () => void }) {
           background: "radial-gradient(ellipse 55% 65% at 50% 50%, rgba(74,143,232,0.05) 0%, transparent 70%)",
         }} />
 
-        {/* Funnel container — 80% of column height, vertically centered */}
+        {/* Funnel container , 80% of column height, vertically centered */}
         <div style={{
           position: "relative",
           width: "100%",
@@ -491,7 +491,7 @@ export default function IntroScreen({ onNext }: { onNext: () => void }) {
 
         </div>
 
-        {/* Annotations — positioned in Column 1 using viewport-relative top values */}
+        {/* Annotations , positioned in Column 1 using viewport-relative top values */}
         {ANNOTATIONS.map((ann, i) => {
           if (!triggeredWaists.has(i)) return null;
           return (
@@ -532,7 +532,7 @@ export default function IntroScreen({ onNext }: { onNext: () => void }) {
         })}
       </div>
 
-      {/* Column 2 — 45%, copy stack */}
+      {/* Column 2 , 45%, copy stack */}
       <div style={{
         width: "45%",
         height: "100vh",

@@ -54,7 +54,7 @@ function LabelCard({
         background: "rgba(6,6,6,0.82)",
         padding: "8px 12px",
         minWidth: "120px",
-        // Border brightens on hover — overrides glass-card's border
+        // Border brightens on hover, overrides glass-card's border
         border: isHovered
           ? "1px solid rgba(74,143,232,0.4)"
           : undefined,
@@ -75,7 +75,7 @@ function LabelCard({
       }}>
         {name}
       </div>
-      {/* Line 3: Active metric — brightens to white when hovered */}
+      {/* Line 3: Active metric, brightens to white when hovered */}
       <div style={{
         fontSize: "16px",
         color: isHovered ? "#ffffff" : "#4A8FE8",
